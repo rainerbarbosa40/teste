@@ -20,15 +20,16 @@
             <div class="bg-dark card card-body">
                 <h1 class="great-vibes-regular">Pensamentos e Sonhos</h1>
 
-                <form action="#">
+                <form method="post" action="{% url 'registrar_humano' %}">
+                    {% csrf_token %}
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="pensamento">Registrar pensamento</label>
-                            <textarea id="pensamento" name="pensamento" class="form-control" rows="4"></textarea>
+                            <textarea id="pensamento" name="texto_pensamento" class="form-control" rows="4"></textarea>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="sonho">Registrar sonhos</label>
-                            <textarea id="sonho" name="sonho" class="form-control" rows="4"></textarea>
+                            <textarea id="sonho" name="texto_sonho" class="form-control" rows="4"></textarea>
                         </div>
                     </div>
                     <input type="submit" value="Salvar" class="btn btn-primary">
@@ -39,21 +40,19 @@
 
         <div class="collapse text-light" id="collapseExample1">
             <div class="bg-dark card card-body">
-                <h1 class="great-vibes-regular">Pensamentos Registrados</h1>
-                <p>
-                   - Terça-feira 27/01/2024 20:09  - Pela manhã logo cedo sentir-me grato pelo vida ...<br>
-                    De tarde tive uma idéia de um sistema de registros de pensamentos<br>
-                    o sistema irá guardar pensamentos e sonhos para possíveis consultas<br>
-                    <hr>
-                    - Terça-feira 27/01/2024 20:09  - Pela manhã logo cedo sentir-me grato pelo vida ...<br>
-                    De tarde tive uma idéia de um sistema de registros de pensamentos<br>
-                    o sistema irá guardar pensamentos e sonhos para possíveis consultas<br>
-                    <hr>
-                    - Terça-feira 27/01/2024 20:09  - Pela manhã logo cedo sentir-me grato pelo vida ...<br>
-                    De tarde tive uma idéia de um sistema de registros de pensamentos<br>
-                    o sistema irá guardar pensamentos e sonhos para possíveis consultas<br>
-                    <hr>
-                </p>
+                <h1 class="great-vibes-regular">Pensamentos e Sonhos Registrados</h1>
+                <ul>
+                    {% for humano in humanos %}
+                        {% if humano.texto_pensamento %}
+                            <li>{{ humano.data_criacao }} - <b class="great-vibes-regular" style="color:#ff9">Pensamento</b><br> {{ humano.texto_pensamento }}</li>
+                        {% endif %}
+                        {% if humano.texto_sonho %}
+                            <li>{{ humano.data_criacao }} - <b class="great-vibes-regular" style="color:#ff9">Sonho</b><br> {{ humano.texto_sonho }}</li>
+                        {% endif %}
+                    {% empty %}
+                        <li>Nenhum pensamento ou sonho registrado.</li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
 

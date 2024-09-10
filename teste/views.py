@@ -1,19 +1,19 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
+from .models import Humano  # Se estiver usando o modelo Humano
 
 def index(request):
-    return render(request, "teste/index.html")
+    # Lógica para a view 'index'
+    return render(request, 'teste/index.html')  # Ajuste o caminho do template conforme necessário
 
+def registrar_humano(request):
+    if request.method == "POST":
+        texto_pensamento = request.POST.get('texto_pensamento')
+        texto_sonho = request.POST.get('texto_sonho')
 
-def pensamentos(request):
-    return render(request, "teste/pensamentos.html")
-  
+        if texto_pensamento or texto_sonho:
+            Humano.objects.create(
+                texto_pensamento=texto_pensamento,
+                texto_sonho=texto_sonho
+            )
 
-
-
-
-
-
-
-# Create your views here.
+    return render(request, 'teste/registrar_pensamento.html', {'humanos': Humano.objects.all()})
