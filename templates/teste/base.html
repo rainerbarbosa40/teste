@@ -16,8 +16,14 @@
         padding: 10px 20px;
       }
       body {
-        background-position: center top;
-      }
+        background-color: #FFFFFF; /* Cor de fundo de fallback */
+        background-image: url("{% static 'img/yin_yang.png' %}");
+        background-position: center top; /* Centraliza a imagem */
+        background-repeat: no-repeat; /* Impede que a imagem se repita */
+        background-size: cover; /* Faz com que a imagem cubra toda a área */
+        margin: 0; /* Remove margens padrão do body */
+        padding: 0; /* Remove preenchimentos padrão do body */
+    }
 
       .great-vibes-regular {
         font-family: "Great Vibes", cursive;
@@ -34,7 +40,7 @@
       
     </style>
   </head>
-  <body class='text-light' style="background-image: url('{% static 'img/yin_yang.png' %}')">
+  <body>
     <h1 class="ewert-regular">Sistema RB Soft</h1>
 
     {% block content %}
