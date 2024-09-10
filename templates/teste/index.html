@@ -1,9 +1,87 @@
 {% extends "teste/base.html" %}
 
 {% block content %}
-<h1></h1>
+<h1 class="great-vibes-regular">Registro de Pensamentos e Sonhos</h1>
 <p class="ms-3">
- 
+    <div class="container">
+        <a style="text-decoration: none; color: #ffff" href="{% url 'pensamentos' %}">Registrar Pensamento</a><br><br>
+      <p class="d-inline-flex gap-1">
+          <a class="btn btn-primary ms-5" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Psicologia Analítica
+          </a>
+          <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
+            I ching
+          </a>      
+          
+          <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+            Flauta doce
+          </a>
+          <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+            Mandalas
+          </a>        
+        </p>
+        <div class="collapse text-light" id="collapseExample">
+          <div class="bg-dark card card-body">
+            Psicologia analítica, também conhecida como psicologia junguiana ou psicologia complexa, 
+            é um ramo de conhecimento e prática da Psicologia, iniciado por Carl Gustav Jung. Ela enfatiza 
+            a importância da psique, do inconsciente, dos arquétipos e do processo de individuação. 
+            Ela se distingue da psicanálise, iniciada por Freud, e da psicologia de Adler e seus contemporâneos, 
+            por uma noção diferenciada e abrangente da libido, a conceituação do inconsciente coletivo e o 
+            surgimento da função transcendente.
+            <img class="mt-3" src="static/img/psicologia_analitica.jpg" style="width: 300px; height: 200px;" alt="Psicologia Analítica">
+          </div>
+        </div>
+  
+        <div class="collapse text-light" id="collapseExample1">
+          <div class="bg-dark card card-body">
+            O Livro das Mutações ou Clássico das Mutações, é um texto clássico chinês composto de várias 
+            camadas sobrepostas ao longo do tempo é considerado um dos mais antigos e importantes livros 
+            de filosofia chinesa que chegaram até nossos dias. Originalmente um manual de adivinhação durante 
+            a Dinastia Zhou Ocidental (1000–750 AC), foi transformado, ao longo do período dos Estados Combatentes 
+            e o início do período imperial (500–200 AC), num texto cosmológico com uma série de comentários 
+            filosóficos conhecida como as "Dez Asas", (十翼 shí yì). Depois de se tornar parte dos cinco 
+            clássicos no século II AC, o I Ching foi objeto de comentários de estudiosos e a base para a 
+            prática de adivinhação por séculos no Oriente, tendo também um papel influente no entendimento 
+            do pensamento oriental pelo Ocidente.
+           
+            <img class="mt-3" src="static/img/iching.jpg" style="width: 300px; height: 200px;" alt="I Ching">
+          </div>
+        </div>
+  
+        <div class="collapse text-light" id="collapseExample2">
+          <div class="bg-dark card card-body">
+            O instrumento mais antigo classificado como uma flauta, totalmente preservado, 
+            foi descoberto em um fosso de uma residência em Dordrecht, na Holanda, e atualmente 
+            está abrigado no Gemeentemuseum em Haia. Uma recente descoberta, publicada pela Universidade 
+            de Tuebingen, destaca o que pode ser considerado o instrumento mais antigo feito por um homem 
+            de Neandertal na Alemanha. Trata-se de uma flauta de osso com aproximadamente 42.000 anos. 
+            Embora haja evidências suficientes para confirmar a presença da flauta doce na Europa nas 
+            últimas décadas do século XIV, foi durante o século XV que o instrumento se consolidou, 
+            aparecendo de forma inequívoca em listas de compras de instrumentos, em representações 
+            visuais (pinturas, afrescos, tapeçarias) e em descrições presentes em diversos documentos.
+           
+            <img class="mt-3" src="static/img/flauta.jpg" style="width: 300px; height: 200px;" alt="Flauta doce">
+          </div>
+        </div>
+  
+        <div class="collapse text-light" id="collapseExample3">
+          <div class="bg-dark card card-body">
+            É uma representação geométrica da dinâmica relação entre o 
+            homem e o cosmo. Refere-se a uma figura geométrica em que o círculo 
+            está circunscrito em um quadro ou o quadrado em um círculo. 
+            Essa figura possui ainda subdivisões, mais ou menos regulares, 
+            dividida por quatro ou múltiplos de quatro. Parecendo irradiada 
+            do centro ou se move para dentro dele, dependendo da perspectiva 
+            do indivíduo. Mandalas são utilizadas de modo esquemático e, 
+            ao mesmo tempo, pode ser entendida em certas tradições religiosas 
+            como um resumo da manifestação espacial do divino, uma “imagem do Mundo”. 
+            
+            <img class="mt-3" src="static/img/mandala.jpg" style="width: 300px; height: 200px;" alt="Mandala">
+           
+          </div>
+        </div>
+        </div>
+      
 </p>
 {% endblock  %}
 

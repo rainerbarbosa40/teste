@@ -4,6 +4,10 @@ from django.http import HttpResponse
 
 def index(request):
     return render(request, "teste/index.html")
+
+
+def pensamentos(request):
+    return render(request, "teste/pensamentos.html")
   
 
 

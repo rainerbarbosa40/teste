@@ -1,0 +1,36 @@
+{% extends "teste/base.html" %}
+
+{% block content %}
+<h1 class="great-vibes-regular">Meus Pensamentos</h1>
+<a class="ms-4" style="text-decoration: none; color: #ffff" href="{% url "index" %}">Home</a>
+<p class="ms-3">
+    <div class="container">
+        <p class="d-inline-flex gap-1">
+            <a class="btn btn-success ms-5" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Digitar pensamento
+            </a>
+        </p>
+
+        <div class="collapse text-light" id="collapseExample">
+            <div class="bg-dark card card-body">
+                <h1 class="great-vibes-regular">Pensamentos e Sonhos</h1>
+
+                <form action="#">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="pensamento">Registrar pensamento</label>
+                            <textarea id="pensamento" name="pensamento" class="form-control" rows="4"></textarea>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="sonho">Registrar sonhos</label>
+                            <textarea id="sonho" name="sonho" class="form-control" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <input type="submit" value="Salvar" class="btn btn-primary">
+                </form>
+                <p>Clique em Salvar e registre seu pensamento ou sonho.</p>
+            </div>
+        </div>
+    </div>
+</p>
+{% endblock %}
