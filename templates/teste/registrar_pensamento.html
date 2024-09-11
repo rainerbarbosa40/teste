@@ -44,10 +44,10 @@
                 <ul>
                     {% for humano in humanos %}
                         {% if humano.texto_pensamento %}
-                            <li>{{ humano.data_criacao }}  <b class="great-vibes-regular ms-2" style="color:#ff9; font-size:24px;">Pensamento</b><br> {{ humano.texto_pensamento }} <hr></li>
+                            <li><i style="color:#05fa1d;"> {{ humano.data_criacao }}</i>  <b class="great-vibes-regular ms-2" style="color:#ff9; font-size:24px;">Pensamento</b><br> {{ humano.texto_pensamento }} <hr></li>
                         {% endif %}
                         {% if humano.texto_sonho %}
-                            <li>{{ humano.data_criacao }}  <b class="great-vibes-regular ms-2" style="color:#ff9; font-size:24px;">Sonho</b><br> {{ humano.texto_sonho }} <hr></li>
+                            <li><i style="color:#05fa1d;"> {{ humano.data_criacao }}</i>  <b class="great-vibes-regular ms-2" style="color:#ff9; font-size:24px;">Sonho</b><br> {{ humano.texto_sonho }} <hr></li>
                         {% endif %}
                     {% empty %}
                         <li>Nenhum pensamento ou sonho registrado.</li>
